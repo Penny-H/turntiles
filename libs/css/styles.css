@@ -1,0 +1,237 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(../fonts/OpenSans-Bold.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(../fonts/OpenSans-Italic.ttf);
+  font-style: italic;
+}
+
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: rgb(230, 245, 236);
+  color: rgb(106, 91, 110);
+}
+
+#containerGame {
+  text-align: center;
+}
+
+.btn {
+  background-color: rgb(203, 176, 207);
+  color: rgb(45, 37, 52);
+  width: 7rem;
+  margin: 0 2px 5px;
+  padding: 5px 0;
+  border: 1px solid rgb(143, 145, 163); ;
+}
+
+.btn:hover {
+  background-color: rgb(188, 154, 193);
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.btnMode:hover {
+  background-color: rgb(106, 91, 110);
+  color: white;
+  border: 1px solid rgb(173, 174, 188);
+}
+
+.btnModeActive {
+  background-color: rgb(106, 91, 110);
+  color: white;
+  border: 1px solid rgb(173, 174, 188);
+}
+
+.rowBtns {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+#btnInstall {
+  background-color:rgb(104, 130, 205);
+  color: white;
+  border: 1px solid rgb(173, 174, 188);
+}
+
+.instructions {
+  font-size: 0.8rem;
+}
+
+#tries {
+  margin: 0 2px 10px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1.5em; 
+} 
+
+.triesColor {
+  background-color: rgb(203, 176, 207);
+}
+
+.triesColorDone { 
+  background-color: rgb(158, 228, 147);
+}
+
+#scores {
+  display: none;
+  margin: 0 2px 10px;
+}
+
+#go {
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1.5em;
+}
+
+.go1 {
+  background-color: rgb(104, 216, 155);
+}
+
+.go2 {
+  background-color: rgb(243, 211, 74);
+}
+
+.tie {
+  background-color: rgb(196, 158, 199);
+}
+
+.player {
+  display: table;
+  width: 100%;
+  table-layout: fixed; 
+}
+
+.player span {
+  display: table-cell;
+  text-align: center;
+}
+
+#player1 {
+  border: 1px solid rgb(106, 91, 110);
+}
+
+.player1Go {
+  border: 1px solid rgb(106, 91, 110);
+  background-color: rgb(104, 216, 155);
+}
+
+#player2 {
+  border-top: 1px solid rgb(106, 91, 110);
+  border-right: 1px solid rgb(106, 91, 110);
+  border-bottom: 1px solid rgb(106, 91, 110);
+}
+
+.player2Go {
+  border-top: 1px solid rgb(106, 91, 110);
+  border-right: 1px solid rgb(106, 91, 110);
+  border-bottom: 1px solid rgb(106, 91, 110);
+  background-color: rgb(243, 211, 74);
+}
+
+.score {
+  display: table;
+  width: 100%;
+  table-layout: fixed; 
+  margin-bottom: 10px;
+}
+
+.score span {
+  display: table-cell;
+  text-align: center;
+}
+
+#score1 {
+  border-left: 1px solid rgb(106, 91, 110);
+  border-right: 1px solid rgb(106, 91, 110);
+  border-bottom: 1px solid rgb(106, 91, 110);
+} 
+
+#score2 {
+  border-right: 1px solid rgb(106, 91, 110);
+  border-bottom: 1px solid rgb(106, 91, 110);
+}
+
+#layout08 {
+  display:none;
+}
+
+#layout36 {
+  display:none;
+}
+
+.layout {
+  background-color: rgb(173, 174, 188);
+  padding: 5px;
+  border-radius: 12px;
+  margin: 10px 2px 0;
+}
+
+.layoutRow {
+  display: flex;
+  justify-content: space-around;
+}
+
+.layoutRow div {
+  padding: 3px; 
+}
+
+.back {
+  border-radius: 5%;
+  width: 100%;
+}
+
+.pic {
+  border-radius: 5%; 
+  width: 100%;
+  display: none;
+}
+
+.matchColor {
+  background-color: rgb(158, 228, 147);
+}
+
+.noMatchColor {
+  background-color: rgb(143, 138, 162);
+}
+
+.modal-dialog {
+  max-width: 350px;
+}
+
+.modal-header, .modal-body, .modal-footer {
+  background-color: rgb(236, 247, 240);
+}
+
+.options {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.option {
+  font-size: 1.5em;
+}
+
+.modal-footer .btn {
+  width: 5rem;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+}

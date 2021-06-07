@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turn Tiles</title>
+
+  <link rel="manifest" href="manifest.json">
+  <script async src="https://cdn.jsdelivr.net/npm/pwacompat" crossorigin="anonymous"></script>
+
+
+  <link rel='icon' href='images/icons/favicon.ico' type='image/x-icon' />
+
+  <link href="libs/vendors/bootstrap-5.0.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="libs/css/styles.min.css?v1.2" /> 
+</head>
+<body>
+      
+  <div class="container-fluid" id="containerGame">  
+    <div class="row">
+          
+      <div class="col-md-3"> 
+          <div class="rowBtns">
+              <button class="btn btnMode btnModeActive" id="btnOne" title="Current game mode is One Player">One Player</button>
+              <button class="btn btnMode" id="btnBot" title="Set game mode to Bot">Play the Bot</button>
+          </div>
+          <p class="instructions">Turn over tiles and find pairs!</p>
+          <div id="tries" class="triesColor">
+              Tries: <span id="tryCount">0</span>
+          </div>
+          <div id="scores">
+            <div id="go" class="go1">Your Turn</div>
+            <div class="player"><span id="player1" class="player1Go">You</span><span id="player2">Bot</span></div>
+            <div class="score"><span id="score1">0</span><span id="score2">0</span></div>
+          </div>  
+      </div> 
+
+      <div class="col-md-7">
+
+        <div class="layout" id="layout08">
+          <div class="layoutRow">
+            <div class="tile" id="tile08-0">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic1.jpg">
+            </div>
+            <div class="tile" id="tile08-1">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic1.jpg">
+            </div>
+            <div class="tile" id="tile08-2">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic2.jpg">
+            </div>
+            <div class="tile" id="tile08-3">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic2.jpg">
+            </div>
+          </div>
+          <div class="layoutRow">
+            <div class="tile" id="tile08-4">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic3.jpg">
+            </div>
+            <div class="tile" id="tile08-5">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic3.jpg">
+            </div>
+            <div class="tile" id="tile08-6">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic4.jpg">
+            </div>
+            <div class="tile" id="tile08-7">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic4.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="layout" id="layout16">
+          <div class="layoutRow">
+            <div class="tile" id="tile16-0">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic1.jpg">
+            </div>
+            <div class="tile" id="tile16-1">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic1.jpg">
+            </div>
+            <div class="tile" id="tile16-2">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic2.jpg">
+            </div>
+            <div class="tile" id="tile16-3">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic2.jpg">
+            </div>
+          </div>
+          <div class="layoutRow">
+            <div class="tile" id="tile16-4">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic3.jpg">
+            </div>
+            <div class="tile" id="tile16-5">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic3.jpg">
+            </div>
+            <div class="tile" id="tile16-6">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic4.jpg">
+            </div>
+            <div class="tile" id="tile16-7">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic4.jpg">
+            </div>
+          </div>
+          <div class="layoutRow">
+            <div class="tile" id="tile16-8">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic5.jpg">
+            </div>
+            <div class="tile" id="tile16-9">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic5.jpg">
+            </div>
+            <div class="tile" id="tile16-10">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic6.jpg">
+            </div>
+            <div class="tile" id="tile16-11">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic6.jpg">
+            </div>
+          </div>
+          <div class="layoutRow">
+            <div class="tile" id="tile16-12">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic7.jpg">
+            </div>
+            <div class="tile" id="tile16-13">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic7.jpg">
+            </div>
+            <div class="tile" id="tile16-14">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+            <div class="tile" id="tile16-15">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="layout" id="layout36">
+          <div class="layoutRow">
+            <div class="tile" id="tile36-0">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic1.jpg">
+            </div>
+            <div class="tile" id="tile36-1">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic1.jpg">
+            </div>
+            <div class="tile" id="tile36-2">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic2.jpg">
+            </div>
+            <div class="tile" id="tile36-3">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic2.jpg">
+            </div>
+            <div class="tile" id="tile36-4">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic3.jpg">
+            </div>
+            <div class="tile" id="tile36-5">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic3.jpg">
+            </div>
+          </div>
+          <div class="layoutRow">
+            <div class="tile" id="tile36-6">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic4.jpg">
+            </div>
+            <div class="tile" id="tile36-7">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic4.jpg">
+            </div>
+            <div class="tile" id="tile36-8">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic5.jpg">
+            </div>
+            <div class="tile" id="tile36-9">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic5.jpg">
+            </div>
+            <div class="tile" id="tile36-10">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic6.jpg">
+            </div>
+            <div class="tile" id="tile36-11">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic6.jpg">
+            </div>
+          </div>
+          <div class="layoutRow">
+            <div class="tile" id="tile36-12">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic7.jpg">
+            </div>
+            <div class="tile" id="tile36-13">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic7.jpg">
+            </div>
+            <div class="tile" id="tile36-14">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+            <div class="tile" id="tile36-15">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+            <div class="tile" id="tile36-16">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+            <div class="tile" id="tile36-17">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+          </div>
+          <div class="layoutRow">
+            <div class="tile" id="tile36-18">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic7.jpg">
+            </div>
+            <div class="tile" id="tile36-19">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic7.jpg">
+            </div>
+            <div class="tile" id="tile36-20">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+            <div class="tile" id="tile36-21">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+            <div class="tile" id="tile36-22">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+            <div class="tile" id="tile36-23">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+          </div>
+          <div class="layoutRow">
+            <div class="tile" id="tile36-24">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic7.jpg">
+            </div>
+            <div class="tile" id="tile36-25">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic7.jpg">
+            </div>
+            <div class="tile" id="tile36-26">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+            <div class="tile" id="tile36-27">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+            <div class="tile" id="tile36-28">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+            <div class="tile" id="tile36-29">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+          </div>
+          <div class="layoutRow">
+            <div class="tile" id="tile36-30">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic7.jpg">
+            </div>
+            <div class="tile" id="tile36-31">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic7.jpg">
+            </div>
+            <div class="tile" id="tile36-32">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+            <div class="tile" id="tile36-33">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+            <div class="tile" id="tile36-34">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+            <div class="tile" id="tile36-35">
+              <img class="back" src="images/nature/back.jpg">
+              <img class="pic" src="images/nature/pic8.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="rowBtns">
+          <button class="btn" id="btnInstall" title="Install as an App on your Device" hidden>Install</button>
+          <button class="btn" id="btnOptions">Options</button>
+          <button class="btn" id="btnNewGame" title="Start a new game">New Game</button>
+        </div>
+
+        <div class="footer">
+          <p>Copyright &copy; 2021 Penny Halpin</p>
+        </div> 
+
+      </div> 
+  
+    </div>
+       
+  </div>
+  
+
+  <div class="modal fade" id="optionsModal" tabindex="-1" aria-labelledby="optionsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="optionsModalLabel">Options</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="optionsModalBody">
+          <form id="optionsForm">
+            <p>Choose the number of tiles in your grid:</p>
+            <div class="form-group options">
+              <label class="option"><input type="radio" name="numberOfTiles" id="eight" value="8">&nbsp;8 (4x2)</label><br>
+              <label class="option"><input type="radio" name="numberOfTiles" id="sixteen" value="16">&nbsp;16 (4x4)</label><br>
+              <label class="option"><input type="radio" name="numberOfTiles" id="thirtysix" value="36">&nbsp;36 (6x6)</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer" id="optionsFooter">
+          <div>
+            <button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn" id="btnDone">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="libs/vendors/bootstrap-5.0.0-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="libs/vendors/jquery/jquery-2.2.3.min.js"></script>
+
+  <script src="libs/js/script.min.js?v1.2"></script>
+</body>
+</html>
